@@ -14,9 +14,10 @@
 
   <body>
 
-    <div class='container'>
-      <%= yield %>
-    </div>
+    <%= flash[:alert] %>
+    <%= flash[:notice] %>
+
+    <%= yield %>
 
     <%= javascript_include_tag "application" %>
   </body>

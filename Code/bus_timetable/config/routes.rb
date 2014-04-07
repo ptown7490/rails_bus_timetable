@@ -1,3 +1,3 @@
 BusTimetable::Application.routes.draw do
-  resources :stations, { except: [:destroy, :update] }
+  resources :stations, { except: [:update, :show] }
 end

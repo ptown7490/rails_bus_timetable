@@ -1,7 +1,11 @@
-<h1>Stations</h1>
+<div class="row">
+    <h1>Stations</h1>
 
-<ul>
-  <% @stations.each do |station| %>
-    <li>Station #<%= station.number.to_s %></li>
-  <% end %>
-</ul>
+  <ul>
+    <% @stations.each do |station| %>
+      <li>Station #<%= station.number.to_s %> | <%= link_to "Delete", station_path(station), { confirm: 'You sure?', method: 'delete' } %></li>
+    <% end %>
+  </ul>
+
+  <%= link_to "New station", new_station_path, { class: "button tiny"} %>
+</div>
