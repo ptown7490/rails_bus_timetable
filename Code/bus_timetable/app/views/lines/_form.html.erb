@@ -5,5 +5,13 @@
       <%= f.text_field :number %>
     </div>
   </div>
+  <div class="row">
+    <div class="form-group small-2 column">
+      <% @stations.each do |station| %>
+        <%= check_box_tag "line[station_ids][]", station.id,  @line.station_ids.include?(station.id) %>
+        <%= station.number %><br/>
+      <% end %>
+    </div>
+  </div>
   <%= f.submit({ :class => 'button tiny' }) %>
 <% end %>

@@ -6,6 +6,7 @@ class LinesController < ApplicationController
 
   def new
     @line = Line.new
+    @stations = Station.all
     render 'new'
   end
 
@@ -28,10 +29,15 @@ class LinesController < ApplicationController
 
   def edit
     @line = Line.find(params[:id])
+    @stations = Station.all
   end
 
   def update
     @line = Line.find(params[:id])
+    @line.stations.clear
+    Station.where({ id: params[:line][:station_ids] }).each do |station|
+      @line.stations << station
+    end
     if @line.update(line_params)
       flash[:notice] = 'Line updated.'
       redirect_to lines_path
