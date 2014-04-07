@@ -1,0 +1,15 @@
+<%= content_for(:title, 'Lines | Bus Timetable') %>
+
+<div class="row">
+  <h1>Lines</h1>
+
+  <ul>
+    <% @lines.sort_by! { |line| line.number } %>
+    <% @lines.each do |line| %>
+      <li>
+        Line #<%= line.number.to_s %> | <%= link_to "Edit", edit_line_path(line), {method: 'get'} %> | <%= link_to "Delete", line_path(line), { confirm: "You sure?", method: 'delete' } %>
+      </li>
+    <% end %>
+  </ul>
+  <%= link_to "New Line", new_line_path, { class: "button tiny"} %>
+</div>

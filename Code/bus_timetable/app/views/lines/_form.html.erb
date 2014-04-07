@@ -1,0 +1,9 @@
+<%= form_for(@line) do |f| %>
+<div class="row">
+  <div class="form-group small-3 column">
+    <%= f.label :number %>
+    <%= f.text_field :number %>
+  </div>
+</div>
+<%= f.submit({ :class => 'button small-2 columns' }) %>
+<% end %>

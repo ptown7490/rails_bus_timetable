@@ -1,0 +1,10 @@
+<%= content_for(:title, 'New line | Bus Timetable') %>
+
+<div class="row">
+  <%= render 'layouts/errors', { object: @line } %>
+
+  <h1>New Bus Line</h1>
+
+  <%= render 'form' %>
+</div>
+

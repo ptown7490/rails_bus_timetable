@@ -1,7 +1,7 @@
 <%= content_for(:title, 'Edit station | Bus Timetable') %>
 
   <div class="row">
-    <%= render 'layouts/errors' %>
+    <%= render 'layouts/errors', { object: @station } %>
 
     <h1>Edit Bus Station:</h1>
 
