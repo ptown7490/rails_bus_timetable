@@ -1,0 +1,7 @@
+<h1>Stations</h1>
+
+<ul>
+  <% @stations.each do |station| %>
+    <li>Station #<%= station.number.to_s %></li>
+  <% end %>
+</ul>
