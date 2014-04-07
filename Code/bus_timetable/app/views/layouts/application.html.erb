@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : 'Bus Timetable' %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -14,10 +14,12 @@
 
   <body>
 
-    <%= flash[:alert] %>
-    <%= flash[:notice] %>
-
     <%= yield %>
+
+    <div class='row flash'>
+      <%= flash[:alert] %>
+      <%= flash[:notice] %>
+    </div>
 
     <%= javascript_include_tag "application" %>
   </body>
