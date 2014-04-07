@@ -1,0 +1,14 @@
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: bus_timetable_development
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: bus_timetable_test
+
+# production:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: bus_timetable_production
