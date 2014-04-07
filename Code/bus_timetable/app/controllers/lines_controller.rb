@@ -12,6 +12,9 @@ class LinesController < ApplicationController
 
   def create
     @line = Line.create(line_params)
+    Station.where({ id: params[:line][:station_ids] }).each do |station|
+      @line.stations << station
+    end
     if @line.save
       flash[:notice] = 'Line created'
       redirect_to lines_path
